@@ -2,51 +2,49 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-    <style>
-        input {width:30px;}
-        .calc {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);}
-    </style>
+    <title>Calculator</title>
+    <link rel="stylesheet" type="text/css" href="resources/css/style.css">
 </head>
 <body>
-    <div class="calc">
-        <table>
-            <tr>
-                <td colspan="4">
-                    <input type="text" id="display" name="display1" style="width:130px;" disabled>
-                </td>
-            </tr>
-            <tr>
-                <td><input type="button" name="one" value="1"></td>
-                <td><input type="button" name="two" value="2"></td>
-                <td><input type="button" name="three" value="3"></td>
-                <td><input type="button" name="plus" value="+"></td>
-            </tr>
-            <tr>
-                <td><input type="button" name="four" value="4"></td>
-                <td><input type="button" name="five" value="5"></td>
-                <td><input type="button" name="six" value="6"></td>
-                <td><input type="button" name="minus" value="-"></td>
-            </tr>
-            <tr>
-                <td><input type="button" name="seven" value="7"></td>
-                <td><input type="button" name="eight" value="8"></td>
-                <td><input type="button" name="nine" value="9"></td>
-                <td><input type="button" name="multiply" value="x"></td>
-            </tr>
-            <tr>
-                <td><input type="button" name="clear" value="c"></td>
-                <td><input type="button" name="zero" value="0"></td>
-                <td><input type="button" name="equal to" value="="></td>
-                <td><input type="button" name="divide" value="/"></td>
-            </tr>
-        </table>
-    </div>
+    <form name="calculator">
+        <div class="calc_outer">
+            <div class="calc_inner">
+                <table>
+                    <tr>
+                        <td colspan="4">
+                            <input type="text" id="display" name="display1" style="width:130px;" disabled>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="button" name="one" value="1" onclick="addValue(1)"></td>
+                        <td><input type="button" name="two" value="2" onclick="addValue(2)"></td>
+                        <td><input type="button" name="three" value="3" onclick="addValue(3)"></td>
+                        <td><input type="button" name="plus" value="+" onclick="addValue('+')"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="button" name="four" value="4" onclick="addValue(4)"></td>
+                        <td><input type="button" name="five" value="5" onclick="addValue(5)"></td>
+                        <td><input type="button" name="six" value="6" onclick="addValue(6)"></td>
+                        <td><input type="button" name="minus" value="-" onclick="addValue('-')"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="button" name="seven" value="7" onclick="addValue(7)"></td>
+                        <td><input type="button" name="eight" value="8" onclick="addValue(8)"></td>
+                        <td><input type="button" name="nine" value="9" onclick="addValue(9)"></td>
+                        <td><input type="button" name="multiply" value="x" onclick="addValue('*')"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="button" name="clear" value="c" onclick="clearInput()"></td>
+                        <td><input type="button" name="zero" value="0" onclick="addValue(0)"></td>
+                        <td><input type="button" name="equal to" value="=" onclick="evaluateInput()"></td>
+                        <td><input type="button" name="divide" value="/" onclick="addValue('/')"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </form>
 
 
+    <script src="resources/js/calc.js" ></script>
 </body>
 </html>
